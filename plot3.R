@@ -1,7 +1,15 @@
+#download the file and unzip its contents
+url <- 'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip'
+
+download.file(url,'zippeddata.txt')
+
+unzip('zippeddata.txt')
+
+#create a database from the new unzipped file
 data <- read.csv("household_power_consumption.txt", sep=";", na.strings="?")
 
 
-#make the dates more usable
+#make the dates more usable for subsetting
 data$Date <- as.Date(data$Date, '%d/%m/%Y')
 
 #subset the data for the dates we want

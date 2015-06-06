@@ -1,3 +1,11 @@
+#download the file containing the relevant data 
+url <- 'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip'
+download.file(url,'zippeddata.txt')
+
+#it's in a zipped format so we need to unzip it before we can use it
+unzip('zippeddata.txt')
+
+#create a database from the new unzipped file
 data <- read.csv("household_power_consumption.txt", sep=";", na.strings="?")
 
 
