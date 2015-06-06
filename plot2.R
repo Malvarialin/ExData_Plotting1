@@ -26,8 +26,8 @@ png(filename='plot2.png',
 #creates a blank plot (without the points)
 plot(dateTime, data$Global_active_power,type='n',xlab=NA,ylab='Global Active Power (kilowatts)')
 
-#add a line between the data points which is 
-#easier to read than each point individually
+#add a line between the hidden data points
 lines(dateTime, data$Global_active_power)
 
+#turn everything off
 dev.off()
